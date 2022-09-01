@@ -1,0 +1,8 @@
+---
+- hosts: web
+  user: ubuntu
+  become: true
+  roles:
+    # - prometheus
+    # - print
+    - apache

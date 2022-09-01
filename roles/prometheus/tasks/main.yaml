@@ -1,0 +1,19 @@
+---
+- name: Update
+  apt:
+    update_cache: true
+    force_apt_get: true
+ 
+- name: Create Prometheus user
+  shell: |
+     useradd prometheus --no-create-home --shell /bin/false
+     mkdir /etc/prometheus
+     mkdir /var/lib/prometheus 
+     chown prometheus:prometheus  /etc/prometheus
+     chown prometheus:prometheus /var/lib/prometheus
+
+- name: Downlad file form a file path
+  get_url:
+     url: https://api.github.com/repos/prometheus/prometheus/releases/latest 
+     dest: /home/ubuntu/prometheus/
+
