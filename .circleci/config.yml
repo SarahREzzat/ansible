@@ -7,9 +7,16 @@ jobs:
       docker:
         - image: python:3.7-alpine3.11
       steps:
+        - run:
+            name: Edit ansible for ssh connecting
+            command: |
+              sed -i -e '/host_key_checking/s/True/False/' /etc/ansible/ansible.cfg
         - checkout
         - add_ssh_keys:
             fingerprints: ["17:f5:6e:f2:3d:b0:b2:ca:0b:a2:ed:aa:31:e9:30:a2"]
+        # - name: accept new ssh fingerprints                                         
+        #     shell: ssh-keyscan -H {{ item.public_ip }} >> ~/.ssh/known_hosts          
+        #     with_items: '{{ ec2.instances }}'
         - run:
             name: Install Ansible
             command: |
