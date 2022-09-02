@@ -17,7 +17,7 @@ jobs:
         - run:
             name: Play the playbook
             command: |
-              ansible-playbook -i inventory.txt main.yaml  --ssh-common-args='-o StrictHostKeyChecking=no'
+              ansible-playbook -i inventory.txt main.yaml  
         # - run:
         #     name: Create Cloudformation Stack
         #     command: |

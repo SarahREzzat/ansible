@@ -1,4 +1,6 @@
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 [web]
 3.83.135.234
 [all]
 3.83.135.234
+
