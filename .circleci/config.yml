@@ -3,14 +3,20 @@ version: 2.1
         #  welcome: circleci/welcome-oeb@0.4.1
 
 jobs:
-  hello_world:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - run:
-          command: echo "Hello World"
+  create_infrastructure: 
+      docker:
+        - image: amazon/aws-cli
+      steps:
+        - checkout
+        - run:
+            name: Create Cloudformation Stack
+            command: |
+              aws cloudformation deploy \
+                --template-file template.yml \
+                --stack-name myStack \
+                --region us-east-1
 
 workflows:
-  welcome:
+  my_workflow:
     jobs:
-      - hello_world
+      - create_infrastructure
