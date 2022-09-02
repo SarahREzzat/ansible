@@ -1,0 +1,16 @@
+version: 2.1
+orbs:
+  welcome: circleci/welcome-oeb@0.4.1
+
+jobs:
+  hello_world:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          command: echo "Hello World"
+
+workflows:
+  welcome:
+    jobs:
+      - hello_world
