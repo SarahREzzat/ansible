@@ -39,11 +39,13 @@ jobs:
         - run:
             name: Install ansible
             command:
+              cd /home/root
               pip3 install --user ansible 
         - run:
             name: Ansible version
             command: |
               pip3 list  | grep ansible
+              ansible --version
         - run:
             name: Play the playbook
             command: |
