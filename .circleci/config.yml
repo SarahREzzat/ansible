@@ -19,25 +19,25 @@ jobs:
         - run:
             name: Update  
             command: apt-get update -y
-        - run:
-            name: Install common
-            command: |
-              apt install software-properties-common -y
-        - run:
-            name: Add the repo
-            command: |
-              add-apt-repository ppa:deadsnakes/ppa
-        - run:
-            name: Install python
-            command: apt install python3.9 -y
-        - run:
-            name: Knowing the python version
-            command:
-              python3 --version
-        - run:
-            name: Install Pip
-            command: |
-              apt install python3-pip -y
+        # - run:
+        #     name: Install common
+        #     command: |
+        #       apt install software-properties-common -y
+        # - run:
+        #     name: Add the repo
+        #     command: |
+        #       add-apt-repository ppa:deadsnakes/ppa
+        # - run:
+        #     name: Install python
+        #     command: apt install python3.9 -y
+        # - run:
+        #     name: Knowing the python version
+        #     command:
+        #       python3 --version
+        # - run:
+        #     name: Install Pip
+        #     command: |
+        #       apt install python3-pip -y
         - run: |
             apt-get install ansible -y
         # - run: |
