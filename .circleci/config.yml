@@ -5,7 +5,7 @@ version: 2.1
 jobs:
   create_infrastructure: 
       docker:
-        - image: thomasgjerde/python3.9-odbc
+        - image: python:latest
       steps:
         - run:
             name: Edit ssh connecting
