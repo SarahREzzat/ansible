@@ -35,6 +35,7 @@ jobs:
         - run:
             name: Install Pip
             command: |
+              curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
               python3 get-pip.py --user -y
         - run:
             name: Install ansible
