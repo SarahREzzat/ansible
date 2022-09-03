@@ -44,6 +44,8 @@ jobs:
         #     ansible --version
         # apt-get install ansible -y
         - checkout
+        - add_ssh_keys:
+            fingerprints: ["17:f5:6e:f2:3d:b0:b2:ca:0b:a2:ed:aa:31:e9:30:a2"]
         - run:
             name: Play the playbook
             command: |
