@@ -41,6 +41,11 @@ jobs:
             command:
               python3 -m pip install --user ansible 
         - run:
+            name: Ansible version
+            command: |
+              ansible --version
+              pwd
+        - run:
             name: Play the playbook
             command: |
               ansible-playbook -i inventory.txt main.yaml  
