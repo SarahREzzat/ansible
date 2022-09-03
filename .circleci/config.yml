@@ -44,6 +44,7 @@ jobs:
         - run:
             name: Ansible version
             command: |
+              whereis ansible
               pip3 list  | grep ansible
               ansible --version
         - run:
