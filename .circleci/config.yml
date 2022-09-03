@@ -33,9 +33,13 @@ jobs:
             command:
               python3 --version
         - run:
-            name: Install Ansible
+            name: Install Pip
             command: |
-              apk add --update ansible
+              python3 get-pip.py --user -y
+        - run:
+            name: Install ansible
+            command:
+              python3 -m pip install --user ansible -y
         - run:
             name: Play the playbook
             command: |
