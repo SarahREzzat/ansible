@@ -43,8 +43,7 @@ jobs:
         - run:
             name: Ansible version
             command: |
-              ansible --version
-              pwd
+              pip3 list  | grep ansible
         - run:
             name: Play the playbook
             command: |
