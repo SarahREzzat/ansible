@@ -37,12 +37,12 @@ jobs:
             command: |
               apt install python3-pip -y
         - run: |
-            python3 -m pip install --user ansible
-            ls /usr/local/lib/python3.8/
+            apt-get install ansible -y
         # - run: |
         #     whereis ansible
         #     pip3 list  | grep ansible
         #     ansible --version
+        # apt-get install ansible -y
         - checkout
         - run:
             name: Play the playbook
