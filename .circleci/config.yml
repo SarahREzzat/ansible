@@ -22,6 +22,10 @@ jobs:
               sudo add-apt-repository ppa:deadsnakes/ppa
               sudo apt install python3.9
         - run:
+            name: Knowing the python version
+            command:
+              python --version
+        - run:
             name: Install Ansible
             command: |
               apk add --update ansible
