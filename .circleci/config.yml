@@ -37,9 +37,8 @@ jobs:
             command: |
               apt install python3-pip -y
         - run: |
-            cd ~
-            pwd
-            pip3 install --user ansible 
+            cd ~/.local
+            ls -l
         - run: |
             whereis ansible
             pip3 list  | grep ansible
