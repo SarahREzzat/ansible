@@ -14,24 +14,24 @@ jobs:
         #     shell: ssh-keyscan -H {{ item.public_ip }} >> ~/.ssh/known_hosts          
         #     with_items: '{{ ec2.instances }}'
         #     sed -i -e '/host_key_checking/s/True/False/' /etc/ansible/ansible.cfg
-        # - run:
-        #     name: Update  
-        #     command: apt-get update -y
-        # - run:
-        #     name: Install common
-        #     command: |
-        #       apt install software-properties-common -y
-        # - run:
-        #     name: Add the repo
-        #     command: |
-        #       add-apt-repository ppa:deadsnakes/ppa
-        # - run:
-        #     name: Install python
-        #     command: apt install python3.9 -y
-        # - run:
-        #     name: Knowing the python version
-        #     command:
-        #       python3 --version
+        - run:
+            name: Update  
+            command: apt-get update -y
+        - run:
+            name: Install common
+            command: |
+              apt install software-properties-common -y
+        - run:
+            name: Add the repo
+            command: |
+              add-apt-repository ppa:deadsnakes/ppa
+        - run:
+            name: Install python
+            command: apt install python3.9 -y
+        - run:
+            name: Knowing the python version
+            command:
+              python3 --version
         - run:
             name: Install Pip
             command: |
