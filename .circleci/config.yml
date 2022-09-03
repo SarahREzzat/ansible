@@ -38,12 +38,12 @@ jobs:
               apt install python3-pip -y
         - run:
             name: Install ansible
-            command:
+            shell:
               cd /home/root
               pip3 install --user ansible 
         - run:
             name: Ansible version
-            command: |
+            shell: |
               whereis ansible
               pip3 list  | grep ansible
               ansible --version
