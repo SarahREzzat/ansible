@@ -38,8 +38,7 @@ jobs:
               apt install python3-pip -y
         - run: |
             python3 -m pip install --user ansible
-            ls -a
-            find . -iname "pip3"
+            ansible --version
         # - run: |
         #     whereis ansible
         #     pip3 list  | grep ansible
