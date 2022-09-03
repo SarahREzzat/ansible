@@ -50,6 +50,8 @@ jobs:
             name: Play the playbook
             command: |
               ansible-playbook -i inventory.txt main.yaml  
+            environment:
+              ANSIBLE_HOST_KEY_CHECKING: False
         # - run:
         #     name: Create Cloudformation Stack
         #     command: |
