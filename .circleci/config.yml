@@ -8,9 +8,8 @@ jobs:
         - image: python:latest
       steps:
         - run:
-            name: Edit ssh connecting
-            command: |
-              ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+            name: Add SSH host to known
+            command: ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
         - checkout
         - add_ssh_keys:
             fingerprints: ["17:f5:6e:f2:3d:b0:b2:ca:0b:a2:ed:aa:31:e9:30:a2"]
