@@ -16,7 +16,7 @@ jobs:
 workflows:
   production_deployment:
     jobs:
-      creat_and_deploy_front_end
+      - creat_and_deploy_front_end
 # ================================================================================
 
 # version: 2.1
