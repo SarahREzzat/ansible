@@ -1,11 +1,7 @@
 # Exercise - Rollback
 AWSTemplateFormatVersion: 2010-09-09
 Description: ND9991 C3 L4 
-Parameters:
 # Existing Bucket name
-PipelineID:
-  Description: Existing Bucket name
-  Type: String
 Resources:
   # EC2Instance:
   #   Type: 'AWS::EC2::Instance'
@@ -39,7 +35,7 @@ Resources:
       Properties:
         DistributionConfig:
           Origins:
-            - DomainName: !Sub "${PipelineID}.s3.amazonaws.com"
+            - DomainName: "udacity-sara-22.s3.amazonaws.com"
               Id: webpage
               S3OriginConfig:
                 OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
@@ -52,6 +48,6 @@ Resources:
             ViewerProtocolPolicy: allow-all
 Outputs:
   PipelineID:
-    Value: !Sub ${PipelineID}
+    Value: "udacity-sara-22"
     Export:
       Name: PipelineID
