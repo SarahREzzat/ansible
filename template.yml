@@ -6,7 +6,6 @@ Parameters:
 PipelineID:
   Description: Existing Bucket name
   Type: String
-  value: 'udacity-sara-22'
 Resources:
   # EC2Instance:
   #   Type: 'AWS::EC2::Instance'
